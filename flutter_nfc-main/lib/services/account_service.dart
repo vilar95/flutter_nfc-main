@@ -4,7 +4,7 @@ import 'package:http/http.dart';
 import 'dart:convert';
 
 import '../models/account.dart';
-import 'api_key.dart';
+
 
 class AccountService {
   final StreamController<String> _streamController = StreamController<String>();
@@ -15,7 +15,7 @@ class AccountService {
   Future<List<Account>> getAll() async {
     Response response = await get(
       Uri.parse(url),
-      headers: {"Authorization": "Bearer $githubApiKey"},
+      // headers: {"Authorization": "Bearer $githubApiKey"},
     );
     _streamController.add("${DateTime.now()} | Requisição de leitura.");
 
@@ -50,7 +50,7 @@ class AccountService {
 
     Response response = await post(
       Uri.parse(url),
-      headers: {"Authorization": "Bearer $githubApiKey"},
+      // headers: {"Authorization": "Bearer $githubApiKey"},
       body: json.encode({
         "description": "account.json",
         "public": true,

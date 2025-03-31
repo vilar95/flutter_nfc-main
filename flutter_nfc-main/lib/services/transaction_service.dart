@@ -8,7 +8,7 @@ import '../helpers/helper_taxes.dart';
 import '../models/account.dart';
 import '../models/transaction.dart';
 import 'account_service.dart';
-import 'api_key.dart';
+
 
 class TransactionService {
   final AccountService _accountService = AccountService();
@@ -110,7 +110,7 @@ class TransactionService {
     await post(
       Uri.parse(url),
       headers: {
-        "Authorization": "Bearer $githubApiKey",
+        // "Authorization": "Bearer $githubApiKey",
       },
       body: json.encode({
         "description": "accounts.json",
